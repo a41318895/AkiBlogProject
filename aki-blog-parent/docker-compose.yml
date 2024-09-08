@@ -1,0 +1,125 @@
+version: '3.8'
+services:
+  aki-blog:
+    image: a41318895/aki-blog:1.0
+    env_file:
+      - ./aki-blog/prod.env
+    environment:
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: "Asia/Taipei"
+    container_name: aki-blog
+    build:
+      context: .
+      dockerfile: aki-blog/Dockerfile
+    ports:
+      - "7777:7777"
+    networks:
+      - blog_network
+    depends_on:
+      - redis
+      - mysql
+      - nginx
+      - minio
+    restart: on-failure
+
+  aki-admin:
+    image: a41318895/aki-admin:1.0
+    env_file:
+      - ./aki-admin/prod.env
+    environment:
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: "Asia/Taipei"
+    container_name: aki-admin
+    build:
+      context: .
+      dockerfile: aki-admin/Dockerfile
+    ports:
+      - "8989:8989"
+    networks:
+      - blog_network
+    depends_on:
+      - redis
+      - mysql
+      - nginx
+      - minio
+    restart: on-failure
+
+  redis:
+    image: redis:6.0.8
+    container_name: redis
+    environment:
+      TZ: "Asia/Taipei"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ${REDIS_CONF_PATH}:/etc/redis/redis.conf
+      - ${REDIS_DATA_PATH}:/data
+    networks:
+      - blog_network
+    restart: always
+    command: redis-server /etc/redis/redis.conf
+
+  mysql:
+    image: mysql:8.0.19
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: ${MYSQL_ALLOW_EMPTY_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      TZ: "Asia/Taipei"
+    ports:
+      - "3307:3306"
+    volumes:
+      - ${MYSQL_DB_PATH}:/var/lib/mysql
+      - ${MYSQL_CONF_PATH}:/etc/mysql/conf.d
+      - ${MYSQL_INIT_PATH}:/docker-entrypoint-initdb.d
+    networks:
+      - blog_network
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+
+  nginx:
+    image: nginx:1.18.0
+    container_name: nginx
+    environment:
+      TZ: "Asia/Taipei"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8093:8093"
+      - "8094:8094"
+      - "9000:9000"
+    volumes:
+      - ${NGINX_CONF_PATH}:/etc/nginx
+      - ${NGINX_LOGS_PATH}:/var/log/nginx
+      - ${BLOG_DIST_PATH}:/usr/share/nginx/html/blog_dist
+      - ${ADMIN_DIST_PATH}:/usr/share/nginx/html/admin_dist
+    networks:
+      - blog_network
+    restart: always
+
+  minio:
+    image: bitnami/minio:latest
+    container_name: minio
+    ports:
+      - "9002:9000"
+      - "9001:9001"
+    networks:
+      - blog_network
+    volumes:
+      - ${MINIO_DATA_PATH}:/data
+      - ${MINIO_INIT_SCRIPT_PATH}:/usr/local/bin/init-minio.sh
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_DEFAULT_BUCKETS: ${MINIO_DEFAULT_BUCKETS}
+    restart: always
+    command: ["/usr/local/bin/init-minio.sh"]
+
+networks:
+  blog_network:
+    driver: bridge

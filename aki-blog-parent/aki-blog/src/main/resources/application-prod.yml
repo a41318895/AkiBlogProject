@@ -1,0 +1,81 @@
+server:
+  port: ${SERVER_PORT}
+  tomcat:
+    keep-alive-timeout: ${SERVER_TOMCAT_KEEP_ALIVE_TIMEOUT}
+    connection-timeout: ${SERVER_TOMCAT_CONNECTION_TIMEOUT}
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE}
+      max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+  application:
+    name: ${SPRING_APPLICATION_NAME}
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST}
+      password:
+      port: ${SPRING_DATA_REDIS_PORT}
+      database: ${SPRING_DATA_REDIS_DATABASE}
+      connect-timeout: ${SPRING_DATA_REDIS_CONNECT_TIMEOUT}
+      repositories:
+        enabled: false
+  mail:
+    host: smtp.gmail.com
+    port: 587  # 郵件服務主機
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
+    properties:
+      mail:
+        transport:
+          protocol: smtp  # 傳輸協定
+        smtp:
+          auth: true  # 是否向郵件服務驗證身份
+          starttls:
+            enable: true  # 是否啟用 TLS（傳輸層安全），對通訊加密
+    default-encoding: UTF-8
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /swagger
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  packages-to-scan: com.akichou
+
+minio:
+  url: ${MINIO_URL}
+  access:
+    name: ${MINIO_ACCESS_NAME}
+    secret: ${MINIO_ACCESS_SECRET}
+  bucket:
+    name: ${MINIO_BUCKET_NAME}
+oss:
+  minio:
+    local:
+      url: ${OSS_MINIO_LOCAL_URL}
+
+logging:
+  file:
+    name: ${LOGGING_FILE_NAME}
+  level:
+    root: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+  logback:
+    rolling-policy:
+      file-name-pattern: "aki-blog-app.%d{yyyy-MM-dd}.part%i.log"
+      max-history: ${LOGGING_LOGBACK_ROLLING_POLICY_MAX_HISTORY}
+      max-file-size: ${LOGGING_LOGBACK_ROLLING_POLICY_MAX_FILE_SIZE}
