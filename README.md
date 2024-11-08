@@ -17,19 +17,30 @@
    </a>
 </p>
 
+## 專案亮點總結 :
+
+- 前後端分離, 透過 Docker Compose 部署
+- 採用 RESTful 風格設計 API, 搭配 Swagger 提供詳細註解
+- 自定義統一的響應格式 ResponseResult
+- 完善的權限管理系統, 基於 RBAC 模型
+- 集成 Markdown 編輯器與 EasyExcel 導出功能
+
 ## 專案特點 :
 
 ### 整體 : 
 - 前後端分離, 透過 Docker Compose 部署
 - 採用 RESTful 風格設計 API, Swagger 註解清楚
-- 自定義回傳主體 : ResponseResult 類 ( HttpCode + HttpCodeDescription + Data )
+- 自定義統一的響應格式 ResponseResult
+  - 將 HTTP 狀態碼、錯誤描述和業務回傳資料統一封裝在一個 ResponseResult 對象中
+  - 可以提高 API 響應的可讀性和一致性, 同時也便於例外處理與對接前端
 - 確實封裝 DTO、VO
 - 引入 Validation 參數驗證框架
 - 使用 MinIO 雲端物件儲存服務, 處理文章縮圖與使用者大頭貼
 
 ### 前台 :
 - 熱門文章區塊呈現
-- 對文章可發布留言、回覆留言、使用留言表情圖案, 且最新留言能置頂顯示
+- 對文章可發布留言、回覆留言、使用留言表情圖案
+- 對文章的最新留言能置頂顯示, 閱覽者或撰寫者能快速掌握最新回應
 - 友情連結 ( 交換連結 ) 之展示
 - 帳號註冊、登入、三階段個人資料驗證之密碼重設功能
 - 回到網頁頂端按鈕
@@ -37,7 +48,7 @@
 ### 後台 :
 - 參考 element-admin 排版設計
 - 後台人員操作採 RBAC 設計
-- 動態角色權限修改與動態菜單顯示
+- 透過資料庫中權限欄位, 達成動態角色權限修改 與 動態菜單顯示, 便捷管理後台操作者
 - 文章可儲存為草稿形式
 - 審核友情連結 ( 交換連結 )
 - 採用 Markdown 文章編輯器
@@ -73,17 +84,17 @@
 | Postman | API測試工具 |
 | JMeter | 請求壓力與效能測試工具 | 
 
-| 應用與服務相關環境 | 版本 | 
+| 應用與服務相關環境 | 版本 |
 |:-------------:|:------:|
-| OpenJDK | 17 |
-| SpringBoot | 3.2.6 |
-| MySQL | 8.0.19 |
-| Redis | 6.0.8 |
-| Nginx | 1.18.0 |
-| MinIO | 8.5.10 |
-| SpringDOC | 2.0.3 |
-| EasyExcel | 3.3.3 |
-| JakartaMail | 2.0.1 |
+| OpenJDK &nbsp; 開發環境 | 17 |
+| SpringBoot &nbsp; 開發框架 | 3.2.6 |
+| MySQL &nbsp; 資料庫 | 8.0.19 |
+| Redis &nbsp; 緩存觀看數與資料認證標示 | 6.0.8 |
+| Nginx &nbsp; 反向代理 | 1.18.0 |
+| MinIO &nbsp; 雲端對象儲存服務 | 8.5.10 |
+| SpringDOC &nbsp; 接口描述文檔 | 2.0.3 |
+| EasyExcel &nbsp; 導出後台資料Excel | 3.3.3 |
+| JakartaMail &nbsp; 寄送驗證碼確認信 | 2.0.1 |
 
 ## 目錄結構 :
 
@@ -130,3 +141,36 @@ AkiBlogProject
     ├── nginx                  -- 反向代理配置與LOG
     └── redis                  -- Redis配置與儲存資料
 ```
+
+## 安裝部署 :
+
+### 環境依賴 :
+
+- JDK 17
+- MySQL 8.0.19
+- Redis 6.0.8
+- Nginx 1.18.0
+- MinIO 8.5.10
+
+### 本地啟動 :
+
+1. 確保已安裝所需依賴以及環境
+2. 將 `aki-blog-parent\deploy\mysql` 目錄下的 mybolgSite.sql 文件中的資料導入至本地資料庫中
+3. 確保 `aki-blog-parent\aki-admin\` 與 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 環境參數 ( 本地資料庫連接、Redis 連接、Minio 客戶端連接 ) 正確
+5. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
+6. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
+7. 在 IntelliJ IDEA 中運行 `aki-blog-parent` 之 `aki-admin` 與 `aki-blog` APPLICATION
+8. 在 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
+9. 訪問 `http://localhost:8080` 查看前台, `http://localhost:8081` 查看後台
+
+### 為什麼選擇使用 Docker Compose ? 
+
+1. **簡單易用** : Docker Compose 使用 YAML 文件來定義與管理多個應用容器, 簡化配置和部署過程
+2. **擴展性強** : 可以輕鬆添加或移除任一服務, 且支持多個環境（開發、測試、生產環境）的配置
+   
+### Docker Compose 部署 :
+
+1. 確保已安裝並啟動 Docker Desktop
+2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose up -d`
+3. 等待所有服務啟動完成
+4. 訪問 `http://localhost:8080` 查看前台, `http://localhost:8081` 查看後台
