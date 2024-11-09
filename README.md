@@ -166,7 +166,7 @@ AkiBlogProject
    - Redis 6.0.8
    - Nginx 1.18.0
    - MinIO 客戶端 8.5.10
-2. 將 `aki-blog-parent\deploy\mysql` 目錄下的 mybolgSite.sql 文件中的資料導入至本地資料庫中
+2. 將 `mybolgSite.sql` 文件中的資料導入至本地資料庫中
 3. 確保 `aki-blog-parent\aki-admin\` 與 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 環境參數 ( 連接URL ) 正確
 4. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
 5. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
