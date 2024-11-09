@@ -55,22 +55,36 @@
 - 整合 EasyExcel, 導出後台資料
 
 ## 使用技術介紹 :
-| 前端技術 | 後端技術 | 
-|:--------:|:--------:| 
-| Vue2 | SpringBoot | 
-| Vue Router | Spring Security |
-| Axios | SpringData JPA |
-| Element UI | MySQL |
-| Mavon Editor | Mail |
-| JS-Cookie | JJWT |
-| | Spring Validation |
-| | Lombok |
-| | Easy Excel |
-| | Redis |
-| | MinIO |
-| | Swagger |
-| | Nginx |
-| | Docker |
+
+### 前端技術 :
+
+| 前端技術                 | 說明                |
+| :--------------------: | :-------------------: |
+| Vue2           | 核心前端開發框架      |
+| Vue Router           | 路由框架      |
+| Axios           | HTTP 框架      |
+| Element UI           | UI 框架      |
+| Mavon Editor           | 基於 Vue 的 Markdown 編輯器      |
+| JS-Cookie           | Cookie 管理工具      |
+
+### 後端技術 :
+
+| 後端技術                 | 說明                |
+| :--------------------: | :-------------------: |
+| SpringBoot           | Web 應用程式開發框架      |
+| Spring Security       | 授權與認證框架      |
+| Spring Data JPA              | 數據持久層操作框架             |
+| MySQL       | 關聯式資料庫管理系統      |
+| Jakarta Mail       | 郵件接收與發送      |
+| JJWT       | 支持 Java Web Token 登入      |
+| Spring Validation       | 參數驗證框架      |
+| Lombok       | 語言增強函式庫      |
+| Easy Excel       | 基於 Java 的高效 Excel 讀寫處理工具      |
+| Redis       | In-Memory 鍵值對資料結構存放      |
+| MinIO       | 對象儲存      |
+| Swagger       | 生成描述 RESTful API 的文檔      |
+| Nginx       | 網頁伺服器 擔任傳遞前後端訊息的角色      |
+| Docker       | 應用程式容器化      |
 
 ## 開發環境 :
 
@@ -93,8 +107,8 @@
 | Nginx &nbsp; 反向代理 | 1.18.0 |
 | MinIO &nbsp; 雲端對象儲存服務 | 8.5.10 |
 | SpringDOC &nbsp; 接口描述文檔 | 2.0.3 |
-| EasyExcel &nbsp; 導出後台資料Excel | 3.3.3 |
-| JakartaMail &nbsp; 寄送驗證碼確認信 | 2.0.1 |
+| Easy Excel &nbsp; 導出後台資料Excel | 3.3.3 |
+| Jakarta Mail &nbsp; 寄送驗證碼確認信 | 2.0.1 |
 
 ## 目錄結構 :
 
@@ -142,35 +156,55 @@ AkiBlogProject
     └── redis                  -- Redis配置與儲存資料
 ```
 
-## 安裝部署 :
+## 安裝啟動與部署 :
 
-### 環境依賴 :
-
-- JDK 17
-- MySQL 8.0.19
-- Redis 6.0.8
-- Nginx 1.18.0
-- MinIO 8.5.10
-
-### 本地啟動 :
+### 一、本地啟動 :
 
 1. 確保已安裝所需依賴以及環境
+   - JDK 17
+   - MySQL 8.0.19
+   - Redis 6.0.8
+   - Nginx 1.18.0
+   - MinIO 客戶端 8.5.10
 2. 將 `aki-blog-parent\deploy\mysql` 目錄下的 mybolgSite.sql 文件中的資料導入至本地資料庫中
-3. 確保 `aki-blog-parent\aki-admin\` 與 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 環境參數 ( 本地資料庫連接、Redis 連接、Minio 客戶端連接 ) 正確
-5. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
-6. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
-7. 在 IntelliJ IDEA 中運行 `aki-blog-parent` 之 `aki-admin` 與 `aki-blog` APPLICATION
-8. 在 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
-9. 訪問 `http://localhost:8080` 查看前台, `http://localhost:8081` 查看後台
+3. 確保 `aki-blog-parent\aki-admin\` 與 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 環境參數 ( 連接URL ) 正確
+4. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
+5. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
+6. 在 IntelliJ IDEA 中運行 `aki-blog-parent` 之 `aki-admin` 與 `aki-blog` APPLICATION
+7. 在 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
+```
+# Install dependencies 安裝所需依賴項
+npm install
+
+# Serve with hot reloading 啟動熱重載
+npm run dev
+```
+8. 訪問 `http://localhost:8094` 查看前台, `http://localhost:8093` 查看後台
+   
+### 二、Docker Compose 部署 :
+
+1. 確保已安裝並啟動 Docker Desktop
+2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose up -d`
+3. 等待所有服務啟動完成
+4. 訪問 `http://localhost:8094` 查看前台, `http://localhost:8093` 查看後台
 
 ### 為什麼選擇使用 Docker Compose ? 
 
 1. **簡單易用** : Docker Compose 使用 YAML 文件來定義與管理多個應用容器, 簡化配置和部署過程
 2. **擴展性強** : 可以輕鬆添加或移除任一服務, 且支持多個環境（開發、測試、生產環境）的配置
-   
-### Docker Compose 部署 :
 
-1. 確保已安裝並啟動 Docker Desktop
-2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose up -d`
-3. 等待所有服務啟動完成
-4. 訪問 `http://localhost:8080` 查看前台, `http://localhost:8081` 查看後台
+## 技術選型原因 :
+
+1. **前後端分離**: 為了更好地管理與部署, 選擇前後端分離的架構。前端專注於資料展示和API交互, 後端專注於業務邏輯和資料處理
+
+2. **RESTful API 設計**: 為了規範接口設計、提高可維護性, 因而採用 RESTful 風格設計 API。同時結合 Swagger 生成詳細的 API 文檔
+
+3. **RBAC 權限管理**: 為了實現更細緻的權限控制, 選擇基於角色 (Role) 的訪問控制模型。可動態配置角色與權限, 來操作對應的菜單和按鈕
+
+4. **Minio 對象儲存**: 可輕鬆管理文章縮圖和使用者頭貼等檔案外, 還是個可以處理影片、備份和容器鏡像的開源 OSS ( Object Storage Service )
+
+## 可改良或擴增之處 :
+
+- [ ] 整合 ElasticSearch 提高全文搜索效率
+- [ ] 加入 OAuth2.0 登錄方式
+- [ ] 改良程式碼結構, 提高效能與穩定性
