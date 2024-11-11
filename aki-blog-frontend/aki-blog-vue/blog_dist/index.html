@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Aki-Chou-Blog</title>
+  <link rel="shortcut icon" href="./static/favicon.ico">
+  <meta name="description" content="Aki Chou 部落格">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="stylesheet" href="./static/css/all.min.css">
+
+  <style>
+    .footer {
+      background-color: rgba(0, 0, 0, 0);
+      width: 100%;
+      text-align: center;
+      padding: 15px 0 0 0;
+      opacity: 0.8;
+      display: block;
+      font-family: Arial, "STHeiti", Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 11px;
+    }
+
+    @media screen and (max-height: 923px) {
+      .footer {
+        height: 20px;
+        position: relative;
+      }
+    }
+    
+    @media screen and (min-height: 923px) {
+      .footer {
+        height: 1px;
+        position: static;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .footer a {
+      color: #000;
+    }
+  </style>
+
+  <script type="text/javascript" charset="UTF-8" src="./static/js/shCore.js"></script>
+  <script src="./static/js/jquery-3.6.0.min.js"></script>
+<link href="./static/css/app.css?v=ca5e815ef05d37d685dbf0927b6bc2f4" rel="stylesheet"></head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/javascript" src="/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var footer = document.querySelector(".footer");
+      var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight);
+
+      if (footer && pageHeight < 923) {
+        footer.style.position = "fixed";
+        footer.style.bottom = "0";
+      } else if (footer) {
+        footer.style.position = "static";
+      }
+    });
+  </script>
+<script type="text/javascript" src="./static/js/manifest.js?v=1e398d5f1d3bd8cc084a"></script><script type="text/javascript" src="./static/js/vendor.js?v=0f7adadb05191a48413b"></script><script type="text/javascript" src="./static/js/app.js?v=b375810e9cee64c091d2"></script></body>
+
+</html>
