@@ -7,7 +7,7 @@ function resolve(dir) {
 
 const name = process.env.VUE_APP_TITLE || "Aki Chou 部落格"; // 網頁標題
 
-const port = process.env.port || process.env.npm_config_port || 8094;
+const port = process.env.port || process.env.npm_config_port || 8093;
 
 // vue.config.js  https://cli.vuejs.org/zh/config/#css-loaderoptions
 module.exports = {
