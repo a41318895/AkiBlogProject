@@ -39,19 +39,54 @@
 
 ### 前台 :
 - 熱門文章區塊呈現
+<br><br>
+<img src="./pics/hotArticles.png" width="500"><br><br>
 - 對文章可發布留言、回覆留言、使用留言表情圖案
-- 對文章的最新留言能置頂顯示, 閱覽者或撰寫者能快速掌握最新回應
+  <br><br>
+  <img src="./pics/writeComments.png" width="500"><br><br>
 - 友情連結 ( 交換連結 ) 之展示
-- 帳號註冊、登入、三階段個人資料驗證之密碼重設功能
+  <br><br>
+  <img src="./pics/friendLinks.png" width="500"><br><br>
 - 回到網頁頂端按鈕
+  <br><br>
+  <img src="./pics/toTop.png" height="300" width="500"><br><br>
+- 帳號註冊、登入、三階段個人資料驗證之密碼重設功能
+  <br><br>
+  <img src="./pics/register.png" width="500">
+  <br><br>
+  <img src="./pics/login.png" width="500">
+  <br><br>
+  <img src="./pics/verifyStepOne.png" width="500">
+  <br><br>
+  <img src="./pics/verifyStepTwo.png" width="500">
+  <br><br>
+  <img src="./pics/verificationCodeSending.png" width="500">
+  <br><br>
+  <img src="./pics/verifyStepThree.png" width="500">
 
 ### 後台 :
 - 參考 element-admin 排版設計
+  <br><br>
+  <img src="./pics/backStageLogin.png" width="500">
+  <img src="./pics/backStagePage.png" width="500"><br><br>
 - 後台人員操作採 RBAC 設計
+  <br><br>
 - 透過資料庫中權限欄位, 達成動態角色權限修改 與 動態菜單顯示, 便捷管理後台操作者
-- 文章可儲存為草稿形式
+  <br><br>
+  <img src="./pics/userManagement.png" width="500">
+  <img src="./pics/roleManagement.png" width="500">
+  <img src="./pics/menuManagement.png" width="500">
+  <img src="./pics/articleManagement.png" width="500">
+  <img src="./pics/categoryManagement.png" width="500">
+  <img src="./pics/tagManagement.png" width="500"><br><br>
 - 審核友情連結 ( 交換連結 )
+  <br><br>
+  <img src="./pics/friendLinkManagement.png" width="500"><br><br>
+- 文章可儲存為草稿形式
+  <br><br>
 - 採用 Markdown 文章編輯器
+  <br><br>
+  <img src="./pics/writeArticle.png" width="500"><br><br>
 - 整合 EasyExcel, 導出後台資料
 
 ## 使用技術介紹 :
