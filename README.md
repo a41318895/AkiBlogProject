@@ -181,20 +181,14 @@ npm install
 # Serve with hot reloading 啟動熱重載
 npm run dev
 ```
-8. 訪問 `http://localhost:8094` 查看前台, `http://localhost:8093` 查看後台
+8. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
    
 ### 二、Docker Compose 部署 :
 
 1. 確保已安裝並啟動 Docker Desktop
-2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose up -d`
-3. 等待所有後端服務啟動完成
-4. 至 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
-```
-npm install
-
-npm run dev
-```
-5. 訪問 `http://localhost:8094` 查看前台, `http://localhost:8093` 查看後台
+2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose build` 建構, 然後再執行 `docker-compose up -d` 運行
+3. 等待所有服務啟動完成
+4. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
 
 ### 為什麼選擇使用 Docker Compose ? 
 
