@@ -43,6 +43,8 @@ spring:
           auth: true  # 是否向郵件服務驗證身份
           starttls:
             enable: true  # 是否啟用 TLS（傳輸層安全），對通訊加密
+            required: true
+      debug: true
     default-encoding: UTF-8
 
 springdoc:
