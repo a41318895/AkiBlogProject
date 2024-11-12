@@ -170,10 +170,11 @@ AkiBlogProject
    - MinIO 客戶端 8.5.10
 2. 將 `mybolgSite.sql` 文件中的資料導入至本地資料庫中
 3. 確保 `aki-blog-parent\aki-admin\` 與 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 環境參數 ( 連接URL ) 正確
-4. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
-5. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
-6. 在 IntelliJ IDEA 中運行 `aki-blog-parent` 之 `aki-admin` 與 `aki-blog` APPLICATION
-7. 在 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
+4. 將 `aki-blog-parent\aki-blog\` 目錄下的 `dev.env` 中 寄送方Eamil的資訊填妥, 密碼為應用程式密碼
+5. 啟動本地 MySQL, Redis 服務 和 MinIO 客戶端
+6. 確保 Node 版本為 v14.21.3, 及確保 Npm 版本為 6.14.18
+7. 在 IntelliJ IDEA 中運行 `aki-blog-parent` 之 `aki-admin` 與 `aki-blog` APPLICATION
+8. 在 VSCode 中運行 `aki-blog-frontend` 之 `aki-blog-vue` (前台) 與 `aki-vue-admin` (後台) APPLICATION
 ```
 # Install dependencies 安裝所需依賴項
 npm install
@@ -181,14 +182,15 @@ npm install
 # Serve with hot reloading 啟動熱重載
 npm run dev
 ```
-8. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
+9. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
    
 ### 二、Docker Compose 部署 :
 
 1. 確保已安裝並啟動 Docker Desktop
-2. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose build` 建構, 然後再執行 `docker-compose up -d` 運行
-3. 等待所有服務啟動完成
-4. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
+2. 將 `aki-blog-parent` 目錄下的 `.env` 中 寄送方Eamil的資訊填妥, 密碼為應用程式密碼
+3. 在 `aki-blog-parent` 目錄下, 透過 terminal 執行 `docker-compose build` 建構, 然後再執行 `docker-compose up -d` 運行
+4. 等待所有服務啟動完成
+5. 訪問 `http://localhost:8093` 查看前台, `http://localhost:8094` 查看後台
 
 ### 為什麼選擇使用 Docker Compose ? 
 
