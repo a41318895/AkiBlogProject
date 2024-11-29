@@ -89,8 +89,10 @@ jobs:
     # 11. Copy blog and admin frontend static files to server
     - name: Deploy Blog Frontend to Server
       run: |
+        mkdir -p /usr/share/nginx/html/blog_dist
         cp -r aki-blog-frontend/aki-blog-vue/blog_dist/* /usr/share/nginx/html/blog_dist 
 
     - name: Deploy Admin Frontend to Server
       run: |
+        mkdir -p /usr/share/nginx/html/admin_dist
         cp -r aki-blog-frontend/aki-vue-admin/admin_dist/* /usr/share/nginx/html/admin_dist
