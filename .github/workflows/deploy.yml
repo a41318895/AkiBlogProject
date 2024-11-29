@@ -49,29 +49,20 @@ jobs:
         npm run build
         mv dist blog_dist
     
-    # 6. Copy blog and admin frontend static files to server
-    - name: Deploy Blog Frontend to Server
-      run: |
-        cp -r aki-blog-frontend/aki-blog-vue/blog_dist/* /usr/share/nginx/html/blog_dist 
-    
-    - name: Deploy Admin Frontend to Server
-      run: |
-        cp -r aki-blog-frontend/aki-vue-admin/admin_dist/* /usr/share/nginx/html/admin_dist
-    
-    # 7. Backend
+    # 6. Backend
     - name: Build Backend with Maven
       run: |
         cd aki-blog-parent
         mvn clean package -DskipTests -T 4
     
-    # 8. Login Docker Hub
+    # 7. Login Docker Hub
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    # 9. Build and push Docker Image
+    # 8. Build and push Docker Image
     - name: Build and Push Backend Docker Images
       run: |
         # Blog Backend Image
@@ -82,10 +73,19 @@ jobs:
         docker build -t ${{ env.ADMIN_IMAGE }}:latest -f aki-admin/Dockerfile .
         docker push ${{ env.ADMIN_IMAGE }}:latest
     
-    # 10. Deploy
+    # 9. Deploy
     - name: Deploy to Server
       run: |
         cd /mnt/c/Users/User/Desktop/AkiBlogProject/aki-blog-parent
         docker-compose pull
         docker-compose down
         docker-compose up -d
+
+    # 10. Copy blog and admin frontend static files to server
+    - name: Deploy Blog Frontend to Server
+      run: |
+        cp -r aki-blog-frontend/aki-blog-vue/blog_dist/* /usr/share/nginx/html/blog_dist 
+
+    - name: Deploy Admin Frontend to Server
+      run: |
+        cp -r aki-blog-frontend/aki-vue-admin/admin_dist/* /usr/share/nginx/html/admin_dist
