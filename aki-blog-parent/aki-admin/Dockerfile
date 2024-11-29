@@ -8,12 +8,12 @@ WORKDIR /build
 COPY pom.xml .
 COPY aki-framework-common/pom.xml aki-framework-common/pom.xml
 COPY aki-admin/pom.xml aki-admin/pom.xml
-COPY aki-blog/pom.xml aki-blog/pom.xml
+#COPY aki-blog/pom.xml aki-blog/pom.xml
 
 # 複製所有子模塊的源代碼
 COPY aki-framework-common/src aki-framework-common/src
 COPY aki-admin/src aki-admin/src
-COPY aki-blog/src aki-blog/src
+#COPY aki-blog/src aki-blog/src
 
 RUN mvn clean install -DskipTests -T 4
 
