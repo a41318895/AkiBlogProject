@@ -71,15 +71,21 @@ jobs:
         
         docker build -t ${{ env.ADMIN_IMAGE }}:latest -f aki-admin/Dockerfile .
         docker push ${{ env.ADMIN_IMAGE }}:latest
-    
-    # 9. Deploy
+
+    # 9. Install Docker Compose
+    - name: Install Docker Compose
+      run: |
+        sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+
+    # 10. Deploy
     - name: Deploy to Server
       run: |
         docker-compose pull
         docker-compose down
         docker-compose up -d
 
-    # 10. Copy blog and admin frontend static files to server
+    # 11. Copy blog and admin frontend static files to server
     - name: Deploy Blog Frontend to Server
       run: |
         cp -r aki-blog-frontend/aki-blog-vue/blog_dist/* /usr/share/nginx/html/blog_dist 
