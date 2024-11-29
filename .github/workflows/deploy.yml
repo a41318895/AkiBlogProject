@@ -81,6 +81,7 @@ jobs:
     # 10. Deploy
     - name: Deploy to Server
       run: |
+        cd aki-blog-parent
         docker-compose pull
         docker-compose down
         docker-compose up -d
