@@ -66,11 +66,11 @@ jobs:
     - name: Build and Push Backend Docker Images
       run: |
         # Blog Backend Image
-        docker build -t ${{ env.BLOG_IMAGE }}:latest -f aki-blog/Dockerfile .
+        docker build -t ${{ env.BLOG_IMAGE }}:latest -f aki-blog-parent/aki-blog/Dockerfile .
         docker push ${{ env.BLOG_IMAGE }}:latest
         
         # Admin Backend Image
-        docker build -t ${{ env.ADMIN_IMAGE }}:latest -f aki-admin/Dockerfile .
+        docker build -t ${{ env.ADMIN_IMAGE }}:latest -f aki-blog-parent/aki-admin/Dockerfile .
         docker push ${{ env.ADMIN_IMAGE }}:latest
     
     # 9. Deploy
