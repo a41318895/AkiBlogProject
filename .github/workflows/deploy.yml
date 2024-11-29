@@ -39,6 +39,7 @@ jobs:
         cd aki-blog-frontend/aki-vue-admin
         npm install
         npm run build:prod
+        mv dist admin_dist
     
     # 5. Frontend（front-stage）
     - name: Build Blog Frontend
@@ -46,6 +47,7 @@ jobs:
         cd aki-blog-frontend/aki-blog-vue
         npm install
         npm run build
+        mv dist blog_dist
     
     # 6. Copy blog and admin frontend static files to server
     - name: Deploy Blog Frontend to Server
