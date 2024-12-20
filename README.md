@@ -111,7 +111,7 @@
 | Spring Data JPA              | 數據持久層操作框架             |
 | MySQL       | 關聯式資料庫管理系統      |
 | Jakarta Mail       | 郵件接收與發送      |
-| JJWT       | 支持 Java Web Token 登入      |
+| JJWT       | 支持 Json Web Token 登入      |
 | Spring Validation       | 參數驗證框架      |
 | Lombok       | 語言增強函式庫      |
 | Easy Excel       | 基於 Java 的高效 Excel 讀寫處理工具      |
