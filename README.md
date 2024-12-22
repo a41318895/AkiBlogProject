@@ -111,14 +111,14 @@
 | Spring Data JPA              | 數據持久層操作框架             |
 | MySQL       | 關聯式資料庫管理系統      |
 | Jakarta Mail       | 郵件接收與發送      |
-| JJWT       | 支持 Java Web Token 登入      |
+| JJWT       | 支持 Json Web Token      |
 | Spring Validation       | 參數驗證框架      |
 | Lombok       | 語言增強函式庫      |
 | Easy Excel       | 基於 Java 的高效 Excel 讀寫處理工具      |
 | Redis       | In-Memory 鍵值對資料結構存放      |
 | MinIO       | 對象儲存      |
 | Swagger       | 生成描述 RESTful API 的文檔      |
-| Nginx       | 網頁伺服器 擔任傳遞前後端訊息的角色      |
+| Nginx       | 網頁伺服器 擔任反向代理的角色      |
 | Docker       | 應用程式容器化      |
 
 ## 開發環境 :
