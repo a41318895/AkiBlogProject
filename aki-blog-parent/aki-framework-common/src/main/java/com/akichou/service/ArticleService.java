@@ -1,11 +1,12 @@
 package com.akichou.service;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.ArticleAddDto;
-import com.akichou.domain.dto.ArticleEditDto;
-import com.akichou.domain.dto.ArticleSelectConditionsDto;
+import com.akichou.domain.dto.article.ArticleAddDto;
+import com.akichou.domain.dto.article.ArticleEditDto;
+import com.akichou.domain.dto.article.ArticleSelectConditionsDto;
 import com.akichou.domain.entity.Article;
-import com.akichou.domain.vo.*;
+import com.akichou.domain.vo.article.*;
+import com.akichou.domain.vo.page.PageVo;
 
 import java.util.List;
 

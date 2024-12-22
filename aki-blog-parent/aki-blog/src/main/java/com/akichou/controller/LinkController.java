@@ -1,7 +1,7 @@
 package com.akichou.controller;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.vo.LinkVo;
+import com.akichou.domain.vo.link.LinkVo;
 import com.akichou.service.LinkService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

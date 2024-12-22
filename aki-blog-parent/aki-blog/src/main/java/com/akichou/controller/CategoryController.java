@@ -1,7 +1,7 @@
 package com.akichou.controller;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.vo.CategoryVo;
+import com.akichou.domain.vo.category.CategoryVo;
 import com.akichou.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

@@ -1,15 +1,15 @@
 package com.akichou.service;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.RoleAddDto;
-import com.akichou.domain.dto.RoleChangeStatusDto;
-import com.akichou.domain.dto.RoleEditDto;
-import com.akichou.domain.dto.RoleSelectConditionsDto;
+import com.akichou.domain.dto.role.RoleAddDto;
+import com.akichou.domain.dto.role.RoleChangeStatusDto;
+import com.akichou.domain.dto.role.RoleEditDto;
+import com.akichou.domain.dto.role.RoleSelectConditionsDto;
 import com.akichou.domain.entity.Role;
-import com.akichou.domain.vo.PageVo;
-import com.akichou.domain.vo.RoleListVo;
-import com.akichou.domain.vo.RolePageSelectVo;
-import com.akichou.domain.vo.RoleInfoVo;
+import com.akichou.domain.vo.page.PageVo;
+import com.akichou.domain.vo.role.RoleListVo;
+import com.akichou.domain.vo.role.RolePageSelectVo;
+import com.akichou.domain.vo.role.RoleInfoVo;
 
 import java.util.List;
 

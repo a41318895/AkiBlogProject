@@ -1,15 +1,15 @@
 package com.akichou.service;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.LinkAddDto;
-import com.akichou.domain.dto.LinkEditDto;
-import com.akichou.domain.dto.LinkChangeStatusDto;
-import com.akichou.domain.dto.LinkSelectConditionsDto;
+import com.akichou.domain.dto.link.LinkAddDto;
+import com.akichou.domain.dto.link.LinkEditDto;
+import com.akichou.domain.dto.link.LinkChangeStatusDto;
+import com.akichou.domain.dto.link.LinkSelectConditionsDto;
 import com.akichou.domain.entity.Link;
-import com.akichou.domain.vo.LinkInfoVo;
-import com.akichou.domain.vo.LinkPageSelectVo;
-import com.akichou.domain.vo.LinkVo;
-import com.akichou.domain.vo.PageVo;
+import com.akichou.domain.vo.link.LinkInfoVo;
+import com.akichou.domain.vo.link.LinkPageSelectVo;
+import com.akichou.domain.vo.link.LinkVo;
+import com.akichou.domain.vo.page.PageVo;
 
 import java.util.List;
 

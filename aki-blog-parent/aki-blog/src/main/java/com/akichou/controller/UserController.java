@@ -1,11 +1,11 @@
 package com.akichou.controller;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.CheckInfoDto;
-import com.akichou.domain.dto.PasswordResetRequest;
-import com.akichou.domain.dto.UserRegisterRequest;
-import com.akichou.domain.dto.UserInfoRequest;
-import com.akichou.domain.vo.UserInfoVo;
+import com.akichou.domain.dto.user.CheckInfoDto;
+import com.akichou.domain.dto.user.PasswordResetRequest;
+import com.akichou.domain.dto.user.UserRegisterRequest;
+import com.akichou.domain.dto.user.UserInfoRequest;
+import com.akichou.domain.vo.user.UserInfoVo;
 import com.akichou.exception.SystemException;
 import com.akichou.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,8 +1,8 @@
 package com.akichou.service;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.UserLoginRequest;
-import com.akichou.domain.vo.AdminUserLoginVo;
+import com.akichou.domain.dto.user.UserLoginRequest;
+import com.akichou.domain.vo.user.AdminUserLoginVo;
 
 /**
  * Blog Admin Login Service Interface

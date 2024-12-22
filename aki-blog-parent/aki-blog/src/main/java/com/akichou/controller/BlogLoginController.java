@@ -2,8 +2,8 @@ package com.akichou.controller;
 
 import com.akichou.customEnum.AppHttpCodeEnum;
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.UserLoginRequest;
-import com.akichou.domain.vo.BlogUserLoginVo;
+import com.akichou.domain.dto.user.UserLoginRequest;
+import com.akichou.domain.vo.user.BlogUserLoginVo;
 import com.akichou.exception.SystemException;
 import com.akichou.service.BlogLoginService;
 import io.swagger.v3.oas.annotations.Operation;

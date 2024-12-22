@@ -2,11 +2,11 @@ package com.akichou.service.impl;
 
 import com.akichou.customEnum.AppHttpCodeEnum;
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.CommentAddDto;
+import com.akichou.domain.dto.comment.CommentAddDto;
 import com.akichou.domain.entity.Comment;
 import com.akichou.domain.entity.User;
-import com.akichou.domain.vo.CommentVo;
-import com.akichou.domain.vo.PageVo;
+import com.akichou.domain.vo.comment.CommentVo;
+import com.akichou.domain.vo.page.PageVo;
 import com.akichou.exception.SystemException;
 import com.akichou.repository.CommentRepository;
 import com.akichou.repository.UserRepository;

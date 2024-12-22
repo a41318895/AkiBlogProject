@@ -1,14 +1,14 @@
 package com.akichou.service;
 
-import com.akichou.domain.dto.CategoryAddDto;
-import com.akichou.domain.dto.CategorySelectConditionsDto;
-import com.akichou.domain.dto.CategoryEditDto;
+import com.akichou.domain.dto.category.CategoryAddDto;
+import com.akichou.domain.dto.category.CategorySelectConditionsDto;
+import com.akichou.domain.dto.category.CategoryEditDto;
 import com.akichou.domain.entity.Category;
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.vo.CategoryInfoVo;
-import com.akichou.domain.vo.CategoryPageSelectVo;
-import com.akichou.domain.vo.CategoryVo;
-import com.akichou.domain.vo.PageVo;
+import com.akichou.domain.vo.category.CategoryInfoVo;
+import com.akichou.domain.vo.category.CategoryPageSelectVo;
+import com.akichou.domain.vo.category.CategoryVo;
+import com.akichou.domain.vo.page.PageVo;
 
 import java.util.List;
 import java.util.Set;

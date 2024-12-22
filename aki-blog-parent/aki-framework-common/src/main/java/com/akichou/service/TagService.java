@@ -1,14 +1,14 @@
 package com.akichou.service;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.TagAddDto;
-import com.akichou.domain.dto.TagEditDto;
-import com.akichou.domain.dto.TagSelectConditionsDto;
+import com.akichou.domain.dto.tag.TagAddDto;
+import com.akichou.domain.dto.tag.TagEditDto;
+import com.akichou.domain.dto.tag.TagSelectConditionsDto;
 import com.akichou.domain.entity.Tag;
-import com.akichou.domain.vo.PageVo;
-import com.akichou.domain.vo.TagInfoVo;
-import com.akichou.domain.vo.TagPageSelectVo;
-import com.akichou.domain.vo.TagVo;
+import com.akichou.domain.vo.page.PageVo;
+import com.akichou.domain.vo.tag.TagInfoVo;
+import com.akichou.domain.vo.tag.TagPageSelectVo;
+import com.akichou.domain.vo.tag.TagVo;
 
 import java.util.List;
 

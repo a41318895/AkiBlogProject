@@ -1,7 +1,7 @@
 package com.akichou.converter;
 
-import com.akichou.domain.dto.UserAddDto;
-import com.akichou.domain.dto.UserRegisterRequest;
+import com.akichou.domain.dto.user.UserAddDto;
+import com.akichou.domain.dto.user.UserRegisterRequest;
 import com.akichou.domain.entity.User;
 import com.akichou.util.SecurityUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,12 +1,12 @@
 package com.akichou.controller;
 
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.dto.MenuAddDto;
-import com.akichou.domain.dto.MenuEditDto;
-import com.akichou.domain.vo.MenuInfoVo;
-import com.akichou.domain.vo.MenuPageSelectVo;
-import com.akichou.domain.vo.MenuTreeSelectVo;
-import com.akichou.domain.vo.RoleMenuTreeSelectVo;
+import com.akichou.domain.dto.menu.MenuAddDto;
+import com.akichou.domain.dto.menu.MenuEditDto;
+import com.akichou.domain.vo.menu.MenuInfoVo;
+import com.akichou.domain.vo.menu.MenuPageSelectVo;
+import com.akichou.domain.vo.menu.MenuTreeSelectVo;
+import com.akichou.domain.vo.role.RoleMenuTreeSelectVo;
 import com.akichou.exception.SystemException;
 import com.akichou.service.MenuService;
 

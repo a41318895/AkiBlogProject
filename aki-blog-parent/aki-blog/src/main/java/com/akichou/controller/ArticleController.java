@@ -2,10 +2,10 @@ package com.akichou.controller;
 
 import com.akichou.annotation.SystemLog;
 import com.akichou.domain.ResponseResult;
-import com.akichou.domain.vo.ArticleDetailVo;
-import com.akichou.domain.vo.ArticleVo;
-import com.akichou.domain.vo.HotArticleVo;
-import com.akichou.domain.vo.PageVo;
+import com.akichou.domain.vo.article.ArticleDetailVo;
+import com.akichou.domain.vo.article.ArticleVo;
+import com.akichou.domain.vo.article.HotArticleVo;
+import com.akichou.domain.vo.page.PageVo;
 import com.akichou.exception.SystemException;
 import com.akichou.service.ArticleService;
 
