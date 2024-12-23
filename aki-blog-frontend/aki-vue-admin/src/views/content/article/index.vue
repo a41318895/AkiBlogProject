@@ -59,7 +59,7 @@
               @click="handleDelete"
             >單項 / 批量刪除</el-button>
           </el-col>
-          <el-col :span="1.5">
+          <!-- <el-col :span="1.5">
             <el-button
               v-hasPermission="['content:article:export']"
               type="warning"
@@ -69,7 +69,7 @@
               :loading="exportLoading"
               @click="handleExport"
             >導出</el-button>
-          </el-col>
+          </el-col> -->
           <!-- <right-toolbar
             :show-search.sync="showSearch"
             :columns="columns"

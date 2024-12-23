@@ -12,7 +12,7 @@
 							<template slot="title"><i class="fa fa-wa fa-archive"></i> 文章分類</template>
 							<el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index" :index="'/Share?classId='+item.id">{{item.name}}</el-menu-item>
 						</el-submenu>
-						<el-menu-item index="/Reward"><i class="fa fa-donate"></i> 贊助</el-menu-item>
+						<!-- <el-menu-item index="/Reward"><i class="fa fa-donate"></i> 贊助</el-menu-item> -->
 						<el-menu-item index="/Friendslink"><i class="fa fa-wa fa-users"></i>友情連結</el-menu-item>
 
 						<div class="userInfo">

@@ -11,7 +11,6 @@
       <img src="https://img.shields.io/badge/vue-2.5.2-red"/>
       <img src="https://img.shields.io/badge/mysql-8.0.19-red"/>
       <img src="https://img.shields.io/badge/redis-6.0.8-red"/>
-      <img src="https://img.shields.io/badge/easyexcel-3.3.3-red"/>
       <img src="https://img.shields.io/badge/springdoc--openapi--starter--webmvc--ui-2.0.3-red"/>
       <img src="https://img.shields.io/badge/minio-8.5.10-red">
    </a>
@@ -23,7 +22,7 @@
 - 採用 RESTful 風格設計 API, 搭配 Swagger 提供詳細註解
 - 自定義統一的響應格式 ResponseResult
 - 完善的權限管理系統, 基於 RBAC 模型
-- 集成 Markdown 編輯器與 EasyExcel 導出功能
+- 整合 Markdown 編輯器
 
 ## 專案特點 :
 
@@ -87,7 +86,6 @@
 - 採用 Markdown 文章編輯器
   <br><br>
   <img src="./pics/writeArticle.png" width="500"><br><br>
-- 整合 EasyExcel, 導出後台資料
 
 ## 使用技術介紹 :
 
@@ -114,7 +112,6 @@
 | JJWT       | 支持 Json Web Token      |
 | Spring Validation       | 參數驗證框架      |
 | Lombok       | 語言增強函式庫      |
-| Easy Excel       | 基於 Java 的高效 Excel 讀寫處理工具      |
 | Redis       | In-Memory 鍵值對資料結構存放      |
 | MinIO       | 對象儲存      |
 | Swagger       | 生成描述 RESTful API 的文檔      |
@@ -142,7 +139,6 @@
 | Nginx &nbsp; 反向代理 | 1.18.0 |
 | MinIO &nbsp; 雲端對象儲存服務 | 8.5.10 |
 | SpringDOC &nbsp; 接口描述文檔 | 2.0.3 |
-| Easy Excel &nbsp; 導出後台資料Excel | 3.3.3 |
 | Jakarta Mail &nbsp; 寄送驗證碼確認信 | 2.0.1 |
 
 ## 目錄結構 :
